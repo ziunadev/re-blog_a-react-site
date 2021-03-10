@@ -7,6 +7,7 @@ And was aimed as a personal project.
 
 It's 'literally' you can do whatever, that's my moto inside the site.
 It means that you can do whatever you have done with react. You can run it with `yarn start` or if you preferred npm you can `npm start` and so on.
+Make sure that you do `yarn install` or `npm install` first, so you can use node_modules i've use.
 
 so, feel free to star, fork, or even cloned it.
 It's all belong to you :D
