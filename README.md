@@ -10,3 +10,6 @@ It's mean that, you can do whatever you have done with react. You can run it wit
 
 so, feel free to star, fork, or even cloned it.
 It's all belong to you :D
+
+Sincerely, Putra
+more description will be added in the future
