@@ -1,0 +1,48 @@
+.TitleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 150px;
+  color: #ECEFF4;
+  background-color: #2E3440;
+}
+
+.UserandTitle {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  width: 60vw;
+  height: 150px;
+  padding: 18px 0;
+}
+
+.UserandTitle h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 45px;
+  font-weight: 400;
+}
+
+.ContentUser {
+  display: flex;
+  align-items: center;
+  flex-flow: row;
+}
+
+.ContentUser img {
+  width: 35px;
+  height: 35px;
+  margin-right: 10px;
+}
+
+.ContentUser .UserInfoPosts h3 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.ContentUser .UserInfoPosts h5 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+  font-size: 13px;
+}

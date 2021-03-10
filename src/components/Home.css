@@ -1,0 +1,31 @@
+.Info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 50px;
+  width: 100vw;
+  /* flex-grow: 3; */
+  /* margin-top: -50px; */
+  /* height: 100%; */
+  /* flex-grow: 2; */
+}
+
+.Info h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 65px;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.Info h2 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 40px;
+  font-weight: 300;
+}
+
+.Info p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+}

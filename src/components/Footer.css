@@ -1,0 +1,32 @@
+.FtContainer {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: auto;
+  flex-grow: 3;
+  background-color: #2E3440;
+  color: #ECEFF4;
+  z-index: 10;
+  box-shadow: -.5px 0 5px 1px #434C5E;
+  /* overflow: hidden; */
+}
+
+.FtContent {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  padding: 15px 0;
+  font-weight: 200;
+}
+
+.FtContent .React {
+  color: #88C0D0;
+  font-weight: 500;
+}
+
+.FtContent .Github {
+  color: #BF616A;
+  font-weight: 500;
+}

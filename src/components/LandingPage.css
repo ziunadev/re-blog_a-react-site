@@ -1,0 +1,45 @@
+.LandingPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ECEFF4;
+  /* height: 100vh; */
+}
+
+
+.LandingPage a {
+  color: #2E3440;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 200;
+  font-size: 50px;
+}
+
+.LandingPage .Link:hover {
+  display: flex;
+  background-color: #2E3440;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s;
+}
+
+.LandingPage .Link:hover a {
+  color: #ECEFF4;
+}
+/* .LandingPage .Link a:after {
+  content: 'START';
+  transition: 0.5s;
+}
+
+.LandingPage .Link:hover a:after {
+  content: 'Welcome to re:blog';
+} */
+
+.LandingPage .SiteName {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
