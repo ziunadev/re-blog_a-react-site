@@ -2,9 +2,6 @@ import React from 'react';
 import './Posts.css';
 // import './../assets/profile-user.svg'
 
-const userImage = require('./assets/profile-userb.svg');
-const favouriteButton = require('./assets/heart.svg')
-
 export default class Posts extends React.Component {
   constructor() {
     super();
@@ -23,7 +20,7 @@ export default class Posts extends React.Component {
             {this.state.posts.map((el, index) => (
               <div className="PostWrapper">
                 <div className="UserWrapper">
-                  <img alt="User" src={userImage.default} className="UserImage"/>
+                  <img alt="User" src='/assets/profile-userb.svg' className="UserImage"/>
                   <div className="UserInfo">
                     <h3 className="UserName">user{index+1}.login@email.com</h3>
                     <h5 classNane="UploadDate">March {6+index}, 2021</h5>
@@ -38,7 +35,7 @@ export default class Posts extends React.Component {
                   <div className="ReadMoreWrapper">
                     <h5><a href={'/home/posts/'+el}>Read more...</a></h5>
                     <div className="FavouriteBox">
-                      <object data={favouriteButton.default} type="image/svg+xml"/>
+                      <img src="/assets/heart.svg" type="image/svg+xml" alt="Favourite Button"/>
                     </div>
                   </div>
                 </div>

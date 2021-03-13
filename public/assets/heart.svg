@@ -4,8 +4,8 @@
       path {
         width: 15px;
         height: 15px;
-        fill: none;
-        stroke: #2E3440;
+        fill: #BF616A;
+        <!-- stroke: #2E3440; -->
         transition: .3s;
       }
       path:hover {
