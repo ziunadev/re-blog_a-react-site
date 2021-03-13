@@ -5,10 +5,16 @@ export default class Fetch extends React.Component {
     super(props);
     this.state = {
       listSantri: [],
+<<<<<<< HEAD
       listSantriResult: null,
       name: "",
       division: "",
       origin: "",
+=======
+      name: '',
+      division: '',
+      origin: '',
+>>>>>>> e71a8800f13b6f4b3fc14287e5a35f7da0396498
       isLoading: false,
       result: null
     }
@@ -22,9 +28,15 @@ export default class Fetch extends React.Component {
       {isLoading: true},
       () => {
         const data = new FormData();
+<<<<<<< HEAD
         data.append("name", this.state.name);
         data.append("division", this.state.division);
         data.append("origin", this.state.origin);
+=======
+        data.append('name', this.state.name);
+        data.append('division', this.state.division);
+        data.append('origin', this.state.origin);
+>>>>>>> e71a8800f13b6f4b3fc14287e5a35f7da0396498
 
         fetch(
           'http://localhost:3030/api/v1/santri',
@@ -32,6 +44,7 @@ export default class Fetch extends React.Component {
             method: 'POST',
             body: data
           }
+<<<<<<< HEAD
         )
         .then(async (resp) => {
           var result;
@@ -45,6 +58,18 @@ export default class Fetch extends React.Component {
         })
         .catch((err) => {
           this.setState({result: 'error'})
+=======
+        ).then((resp) => {
+          var result;
+          if (resp.status == 200) {
+            result = 'ok';
+          } else {
+            result = `error: ${resp.status}`;
+          }
+          this.setState({result: result, isLoading: false});
+        }).catch((err) => {
+          this.setState({result: `error : ${err.status}`})
+>>>>>>> e71a8800f13b6f4b3fc14287e5a35f7da0396498
         })
       }
     )
@@ -123,6 +148,13 @@ export default class Fetch extends React.Component {
             {this.state.listSantri.map((el) => <li>{JSON.stringify(el)}</li>)}
             </ul>
           </div>
+          <button
+            type="button"
+            onClick={this.getListSantri}
+          >
+            Ambil Data
+          </button>
+          <h1>{this.state.result}</h1>
         </form>
       </div>
     )
