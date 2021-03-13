@@ -3,7 +3,7 @@ import './Posts.css';
 // import './../assets/profile-user.svg'
 
 const userImage = require('./assets/profile-userb.svg');
-const favouriteButton = require('./assets/heart.svg')
+const favouriteButton = require('./assets/heart_baru.svg')
 
 export default class Posts extends React.Component {
   constructor() {
