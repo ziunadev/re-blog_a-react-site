@@ -5,9 +5,9 @@ export default class Fetch extends React.Component {
     super(props);
     this.state = {
       listSantri: [],
-      name: "",
-      division: "",
-      origin: "",
+      name: '',
+      division: '',
+      origin: '',
       isLoading: false,
       result: null
     }
@@ -20,17 +20,27 @@ export default class Fetch extends React.Component {
       {isLoading: true},
       () => {
         const data = new FormData();
-        data.append("name", this.state.name);
-        data.append("divisi", this.state.division);
-        data.append("asal", this.state.origin);
+        data.append('name', this.state.name);
+        data.append('division', this.state.division);
+        data.append('origin', this.state.origin);
 
         fetch(
-          "http://localhost:3030/api/v1/santri",
+          'http://localhost:3030/api/v1/santri',
           {
             method: "POST",
             body: data
           }
-        )
+        ).then((resp) => {
+          var result;
+          if (resp.status == 200) {
+            result = 'ok';
+          } else {
+            result = `error: ${resp.status}`;
+          }
+          this.setState({result: result, isLoading: false});
+        }).catch((err) => {
+          this.setState({result: `error : ${err.status}`})
+        })
       }
     )
   }
@@ -69,6 +79,13 @@ export default class Fetch extends React.Component {
               ) : null
             }
           </div>
+          <button
+            type="button"
+            onClick={this.getListSantri}
+          >
+            Ambil Data
+          </button>
+          <h1>{this.state.result}</h1>
         </form>
       </div>
     )
