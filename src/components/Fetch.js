@@ -152,13 +152,13 @@ export default class Fetch extends React.Component {
             type="button"
             onClick={this.submitSantri}
           >
-            Simpan data
+            Simpan
           </button>
           <button
             type="button"
             onClick={this.getDataSantri}
           >
-            Ambil Data Santri
+            Ambil
           </button>
         </form>
         <div>
