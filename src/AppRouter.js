@@ -1,5 +1,9 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from 'react-router-dom';
 // import './AppRouter.css';
 import LandingPage from './components/LandingPage';
 import HomeRouter from './HomeRouter';
@@ -16,8 +20,15 @@ export default class AppRouter extends React.Component {
       <div>
         <Router>
           <Switch>
-            <Route path="/" exact component={LandingPage}/>
-            <Route path="/home" component={HomeRouter}/>
+            <Route
+              path="/"
+              exact
+              component={LandingPage}
+            />
+            <Route
+              path="/home"
+              component={HomeRouter}
+            />
           </Switch>
         </Router>
       </div>
