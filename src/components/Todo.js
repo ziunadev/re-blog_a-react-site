@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { ADD_TODO } from '../constants/todo';
+import { ADD_TODO } from '../constants/CONSTANTS';
 
 
 export class Todo extends React.Component {
