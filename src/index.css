@@ -5,12 +5,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-<<<<<<< HEAD
   overflow-x: hidden;
   /* overflow-y: hidden; */
-=======
   /* overflow-x: hidden; */
->>>>>>> e71a8800f13b6f4b3fc14287e5a35f7da0396498
 }
 
 *:focus {

@@ -1,203 +1,155 @@
 import React from 'react';
-import Santri from './Santri'
 
 export default class Fetch extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
+
     this.state = {
-      listSantri: [],
-      listSantriResult: null,
-      name: '',
-      division: '',
-      origin: '',
-      isLoading: false,
-      result: null,
-      getEditedDataResult: null,
-      deleteSantriResult: null
+      title: '',
+      content: ''
     }
-
-    this.submitSantri = this.submitSantri.bind(this);
-    this.getDataSantri = this.getDataSantri.bind(this);
-    this.renderHere = this.renderHere.bind(this);
-    this.updateSantri = this.updateSantri.bind(this);
-    this.deleteSantri = this.deleteSantri.bind(this);
+    this.loginData = this.loginData.bind(this);
+    this.addData = this.addData.bind(this);
+    this.getData = this.getData.bind(this);
+    this.getUserPost = this.getUserPost.bind(this);
   }
 
-  submitSantri() {
-    this.setState(
-      {isLoading: true},
-      () => {
-        const data = new FormData();
-        data.append('name', this.state.name);
-        data.append('division', this.state.division);
-        data.append('origin', this.state.origin);
-
-        fetch(
-          'http://localhost:3030/api/v1/santri',
-          {
-            method: 'POST',
-            body: data
-          }
-        ).then((resp) => {
-          var result;
-          if (resp.status == 200) {
-            result = 'ok';
-          } else {
-            result = `error : ${resp.status}`
-          }
-          this.setState({result: result, isLoading: false})
-        }).catch((err) => {
-          this.setState({result: `error : ${err.status}`, isLoading: false})
-        })
-      }
-    )
-  }
-
-  getDataSantri() {
+  getUserPost() {
     fetch(
-      'http://localhost:3030/api/v1/santri'
+      'http://localhost:3030/api/v1/user/post',
+      {
+        headers: {
+          'authorization': 'bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkpvaG4iLCJpYXQiOjE2MTU3Nzc5NjN9.JslKSp4r7sj4ImGzE0ekKyWr0NVwoth0KM2KA5FjTRI'
+        }
+      }
     )
-    .then(async (resp) => {
-      var result = {
-        listSantri: null,
-        listSantriResult: null
-      }
+    .then(async (res) => {
+      if (res.status == 200) {
+        const body = await res.json();
 
-      if (resp.status == 200) {
-        const body = await resp.json();
-        result.listSantri = body.data;
-        result.listSantriResult = 'ok';
+        console.log(body.data);
       } else {
-        result.listSantri = [];
-        result.listSantriResult = 'error';
+        console.log('err');
       }
-      this.setState(result);
     })
     .catch((err) => {
-      this.setState({
-        listSantri: [],
-        listSantriResult: 'error'
+      console.trace();
+    })
+  }
+
+  getData() {
+    fetch(
+      'http://localhost:3030/api/v1/public/post'
+    )
+    .then(async (res) => {
+      if (res.status == 200) {
+        const body = await res.json();
+
+        console.log(body.data);
+      } else {
+        console.log('err');
+      }
+    })
+    .catch((err) => {
+      console.trace();
+    })
+  }
+
+  addData() {
+    const data = JSON.stringify({
+        title: this.state.title,
+        content: this.state.content
       })
-    })
-  }
-
-  updateSantri(id, data) {
-    const body = new FormData();
-    body.append('name', data.name);
-    body.append('division', data.division);
-    body.append('origin', data.origin);
-
     fetch(
-      'http://localhost:3030/api/v1/santri/'+id,
+      'http://localhost:3030/api/v1/user/post',
       {
-        method: 'PUT',
-        body: body
+        method: 'POST',
+        body: data,
+        headers: {
+          'content-type': 'application/json',
+          'authorization': 'bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkpvaG4iLCJpYXQiOjE2MTU3Nzc5NjN9.JslKSp4r7sj4ImGzE0ekKyWr0NVwoth0KM2KA5FjTRI'
+        }
       }
-    ).then((resp) => {
-      var result;
-      if (resp.status == 200) {
-        this.getDataSantri();
-        result = 'ok';
+    )
+    .then((res) => {
+      if (res.status == 200) {
+        console.log('ok');
       } else {
-        result = 'error';
+        console.log('!ok');
       }
-      this.setState({getEditedDataResult: result})
     })
     .catch((err) => {
-      this.setState({getEditedDataResult: 'error'})
+      console.trace();
     })
   }
 
-  deleteSantri(id) {
+  loginData() {
     fetch(
-      'http://localhost:3030/api/v1/santri/'+id,
+      'http://localhost:3030/api/v1/account/token',
       {
-        method: 'DELETE'
+        method: 'POST',
+        body: JSON.stringify({
+          username: 'frontend_dev',
+          password: 'react'
+        }),
+        headers: {
+          'content-type': 'application/json'
+        }
       }
-    ).then((resp) => {
-      var result;
-      if (resp.status == 204) {
-        this.getDataSantri();
-        result = 'delete successfull';
+    )
+    .then(async (res) => {
+      if (res.status == 200) {
+        const body = await res.json();
+        console.log(body);
       } else {
-        result = `delete failure, error : ${resp.status}`;
+        console.log('error');
       }
-      this.setState({deleteSantriResult: result});
-    }).catch((err) => {
-      this.setState({deleteSantriResult: 'error deleting current data'});
+    })
+    .catch((err) => {
+      console.trace();
     })
   }
 
   render() {
-    return(
+    return (
       <div>
-        <form>
-          <label>Nama</label>
-          <input type="text"
-            onChange={(ev) => this.setState({name: ev.target.value})}
-            value={this.state.name}
-            />
-          <label>Divisi</label>
-          <input type="text"
-            onChange={(ev) => this.setState({division: ev.target.value})}
-            value={this.state.division}
-            />
-          <label>Asal</label>
-          <input type="text"
-            onChange={(ev) => this.setState({origin: ev.target.value})}
-            value={this.state.origin}
-            />
+        <button onClick={this.loginData}>Login</button>
 
-          <button
-            type="button"
-            onClick={this.submitSantri}
-          >
-            Simpan
-          </button>
-          <button
-            type="button"
-            onClick={this.getDataSantri}
-          >
-            Ambil
-          </button>
-        </form>
         <div>
-          {
-            this.state.isLoading == true ?
-            (
-              <h1>Loading</h1>
-            ) : null
-          }
+          <form>
+            <label>Title</label>
+            <input
+              type="text"
+              onChange={(ev) => this.setState({title: ev.target.value})}
+              value={this.state.title}
+            />
+            <label>Content</label>
+            <input
+              type="text"
+              onChange={(ev) => this.setState({content: ev.target.value})}
+              value={this.state.content}
+            />
+            <button
+              type="button"
+              onClick={this.addData}
+            >
+              add
+            </button>
+            <button
+              type="button"
+              onClick={this.getData}
+            >
+              get
+            </button>
+            <button
+              type="button"
+              onClick={this.getUserPost}
+            >
+              get user post
+            </button>
+          </form>
         </div>
-        {this.state.result}
-        {this.renderHere()}
-        <table>
-          <tr>
-            <td>Nama&nbsp;&nbsp;&nbsp;&nbsp;</td>
-            <td>Divisi&nbsp;&nbsp;&nbsp;&nbsp;</td>
-            <td>Alamat&nbsp;&nbsp;&nbsp;&nbsp;</td>
-          </tr>
-          {this.state.listSantri.map(
-            (el) => <Santri
-                      santri={el}
-                      key={el.id}
-                      onUpdate={this.updateSantri}
-                      onDelete={this.deleteSantri}
-                    />
-          )}
-        </table>
       </div>
     )
-  }
-  renderHere() {
-    if (this.state.result == 'ok') {
-      return(
-        <h2>Berhasil</h2>
-      )
-    } else if (this.state.result != 'ok' && this.state.result != null) {
-      return(
-        <h2>Error</h2>
-      )
-    }
   }
 }

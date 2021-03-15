@@ -7,6 +7,7 @@ import {
 // import './AppRouter.css';
 import LandingPage from './components/LandingPage';
 import HomeRouter from './HomeRouter';
+import Todo from './components/Todo';
 // import Header from './components/Header';
 // import Footer from './components/Footer';
 // import PostsRouter from './PostsRouter';
@@ -28,6 +29,10 @@ export default class AppRouter extends React.Component {
             <Route
               path="/home"
               component={HomeRouter}
+            />
+            <Route
+              path="/todo"
+              component={Todo}
             />
           </Switch>
         </Router>

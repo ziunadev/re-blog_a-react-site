@@ -2,12 +2,9 @@ import React from 'react';
 import './Posts.css';
 // import './../assets/profile-user.svg'
 
-<<<<<<< HEAD
-const userImage = require('./assets/profile-userb.svg');
+// const userImage = require('./assets/profile-userb.svg');s
 const favouriteButton = require('./assets/heart_baru.svg')
 
-=======
->>>>>>> e71a8800f13b6f4b3fc14287e5a35f7da0396498
 export default class Posts extends React.Component {
   constructor() {
     super();
