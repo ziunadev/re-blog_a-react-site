@@ -4,8 +4,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100vw;
-  height: auto;
+  width: 100%;
+  height: 75px;
   flex-grow: 3;
   background-color: #2E3440;
   color: #ECEFF4;
@@ -15,6 +15,9 @@
 }
 
 .FtContent {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
   padding: 15px 0;
@@ -29,4 +32,24 @@
 .FtContent .Github {
   color: #BF616A;
   font-weight: 500;
+}
+
+.FtContent .Additional p {
+  font-size: 15px;
+}
+
+.FtContent .Additional p span {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.FtContent .Additional p a {
+  font-weight: 500;
+  text-decoration: underline;
+  transition: 0.3s;
+}
+
+.FtContent .Additional p a:hover {
+  color: #88C0D0;
 }
