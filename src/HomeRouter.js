@@ -7,9 +7,11 @@ import Home from './components/Home';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import PostsRouter from './PostsRouter';
-import Login from './components/Login';
+// import Login from './components/Login';
 import Register from './components/Register';
 import Fetch from './components/Fetch';
+import UserPost from './components/posts/UserPost';
+
 // import Todo from './components/Todo';
 
 export default class HomeRouter extends React.Component {
@@ -32,12 +34,12 @@ export default class HomeRouter extends React.Component {
             component={PostsRouter}
           />
           <Route
-            path="/home/login"
-            component={Login}
-          />
-          <Route
             path="/home/register"
             component={Register}
+          />
+          <Route
+            path="/home/post/:id"
+            component={UserPost}
           />
         </Switch>
         <Footer />

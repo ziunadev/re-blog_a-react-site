@@ -4,13 +4,15 @@ import { ADD_TODO } from '../constants/CONSTANTS';
 
 
 export class Todo extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
+
 
   render() {
     return (
       <div>
+        {console.log(this.props)}
         <button
           onClick={() => this.props.addTodo('Ini Todo Baru')}
         >

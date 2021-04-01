@@ -88,9 +88,14 @@
 
 
 .PostWrapper p {
-  /* display: flex;
-  justify-content: center;
+  display: inline-block;
+  /*justify-content: center;
   flex-flow: column; */
+  height: auto;
+  overflow: hidden;
+  max-width: 108ch;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   width: 100%;
   /* text-indent: 30px; */
   font-family: 'Open Sans', sans-serif;
@@ -102,6 +107,7 @@
 }
 
 .ContentWrapper .ReadMoreWrapper h5 {
+  padding: 0;
   color: #5E81AC;
 }
 
@@ -109,6 +115,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 15px;
 }
 
 .ContentWrapper .ReadMoreWrapper .FavouriteBox img {

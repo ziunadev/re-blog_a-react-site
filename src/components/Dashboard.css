@@ -1,0 +1,374 @@
+.DashboardContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100vh;
+}
+
+.SidebarContainer {
+  display: flex;
+  justify-content: center;
+  width: 15%;
+  background-color: #2E3440;
+}
+
+.Sidebar {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  font-family: 'Open Sans', sans-serif;
+  color: #ECEFF4;
+  padding: 5px 0 25px 0;
+}
+
+.Sidebar .title {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 20px;
+  padding-left: 50px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 25pt;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.title:hover {
+  color: #BF616A;
+} 
+
+.navigation-button {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.navigation-button ul {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
+  width: 100%;
+  height: 100%;
+}
+
+.navigation-button ul a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 25px 0;
+  width: 100%;
+  height: 65pt;
+  transition: 0.1s;
+  /* height: 100%; */
+}
+
+.navigation-button ul a:hover {
+  color: #BF616A;
+  border-right: 5px solid #BF616A;
+  /* background-color: #3B4252; */
+}
+
+.navigation-button ul li img {
+  margin-right: 15px;
+  width: 15pt;
+  height: 15pt;
+}
+
+.navigation-button ul li div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 25pt;
+  padding-left: 50px;
+}
+
+.DashboardContent {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  flex-direction: column;
+  flex-grow: 2;
+}
+
+.content-navbar {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  height: 6%;
+  /* border-bottom: 1px solid #2E3440; */
+}
+
+.user-info-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* justify-content: center; */
+  height: 100%;
+  padding: 0 50px;
+}
+
+.user-info-bar img {
+  width: 35px;
+  height: 35px;
+  margin-left: 10px;
+}
+
+.user-content {
+  padding: 50px;
+  width: 100%;
+  flex-grow: 2;
+  font-family: 'Open Sans';
+}
+
+/* Temporary Content */
+.temp-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.user-posts-contents {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+}
+
+.every-post-content {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 75px;
+  background-color: #ECEFF4;
+}
+
+.main-posts-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width:  93%;
+  height: 100%;
+}
+
+.content-id {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5%;
+  height: 100%;
+  border-top: 1px solid #D8DEE9;
+}
+
+.per-post-content-title {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+  align-items: center;
+  border-top: 1px solid #D8DEE9;
+  height: 100%;
+}
+
+.per-post-title {
+  margin-right: 25px;
+}
+
+.per-post-content-title .per-post-title h3 {
+  font-weight: 600;
+}
+
+.per-post-content-title .per-post-title a {
+  font-size: 11pt;
+  font-weight: 400;
+}
+
+.per-post-content-title .content h3 {
+  font-weight: 600;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+}
+
+.per-post-content-title .content a {
+  display: inline-block;
+  max-width: 108ch;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 11pt;
+  font-weight: 400;
+}
+
+.delete-edit-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  flex-grow: 2;
+  border-bottom: 1px solid #ECEFF4
+}
+
+.edit-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 100%;
+  background-color: #88C0D0;
+  font-size: 11pt;
+  transition: 0.1s;
+}
+
+.edit-button:hover {
+  color: #ECEFF4;
+}
+
+.edit-button:active {
+  color: #2E3440;
+  background-color: #ECEFF4;
+}
+
+.delete-button {
+  background-color: #BF616A;
+  flex-grow: 2;
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 11pt;
+  transition: 0.1s;
+  border: none;
+  border-radius: 0;
+  margin-left: 1px;
+}
+
+.delete-button:hover {
+  color: #ECEFF4;
+}
+
+.delete-button:active {
+  color: #2E3440;
+  background-color: #ECEFF4;
+}
+
+.add-button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  height: 75px;
+}
+
+.add-button {
+  width: 53.63px;
+  border: none;
+  background-color: #A3BE8C;
+  cursor: pointer;
+  font-size: 11pt;
+}
+
+.add-button:hover {
+  color: #ECEFF4;
+}
+
+.add-button:active {
+  color: #2E3440;
+  background-color: #ECEFF4;
+}
+
+.add-post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+
+.add-post form {
+  width: 100%;
+  height: auto;
+}
+
+.content-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  height: auto;
+  margin-bottom: 25px;
+}
+
+.content-title label {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.content-title input {
+  padding: 5px 25px;
+  border: none;
+  background: none;
+  border-bottom: 2px solid #2E3440;
+  width: 60%;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12pt;
+  font-weight: 600;
+}
+
+.content-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-grow: 2;
+}
+
+.content-body label {
+  margin-bottom: 10px;
+}
+
+.content-body textarea {
+  width: 100%;
+  height: 600px;
+  border: 2px solid #2E3440;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 11pt;
+  font-weight: 400;
+  text-indent: 25px;
+  padding: 15px;
+}
+
+.submit-button {
+  display: flex;
+  /* align-items: flex-end; */
+  justify-content: flex-end;
+  flex-direction: row;
+  width: 100%;
+  /* height: 75px; */
+}
+
+.submit-button button {
+  border: none;
+  background-color: #2E3440;
+  width: 80px;
+  height: 40px;
+  margin: 25px 0 0 25px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 11pt;
+  color: #ECEFF4;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.submit-button button:hover {
+  background-color: #3B4252;
+}
+
+.submit-button button:active {
+  background-color: #2E3440;
+}

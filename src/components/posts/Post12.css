@@ -46,3 +46,95 @@
   font-weight: 100;
   font-size: 13px;
 }
+
+.Loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  background: #ECEFF4;
+}
+
+.ErrorMessage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: 'Open Sans', sans-serif;
+  /* font-weight: 100; */
+  font-size: 30px;
+  width: 100%;
+  height: 100%;
+}
+
+.error-code {
+  font-size: 150px;
+  font-weight: 100;
+}
+
+.error-bar {
+  font-weight: 200;
+  padding-bottom: 28px;
+  font-size: 150px;
+}
+
+.header-error {
+  font-weight: 300;
+}
+
+.left-error-code {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.post-container {
+  width: 60vw;
+  margin-top: 50px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 11pt;
+}
+
+.main-content {
+  text-indent: 40px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid #D8DEE9;
+}
+
+.content-comment {
+  width: 48vw;
+  margin-top: 25px;
+}
+
+.content-comment form {
+  display: flex;
+  /* align-items: center; */
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content-comment form .comment-and-submit input {
+  width: 35vw;
+  height: 35px;
+  border: none;
+  border-bottom: 2px solid #D8DEE9;
+  background: none;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 11pt;
+  padding-bottom: 5px;
+}
+
+.comment-and-submit button {
+  width: 75px;
+  height: 35px;
+  border: none;
+  color: #ECEFF4;
+  background: #2E3440;
+  margin-left: 10px;
+}

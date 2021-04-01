@@ -1,7 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
+import { connect } from 'react-redux';
 import './Header.css';
 
-export default class Header extends React.Component {
+export class Header extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return(
       <div className="NavContainer">
@@ -17,8 +23,9 @@ export default class Header extends React.Component {
               <li>
                 <a href="/home/posts">Posts</a>
               </li>
+
               <li>
-                <a href="/home/login">Login</a>
+                <Link to={'/login'}>Login</Link>
               </li>
               <li>
                 <a className="Red" href="/home/register">Register</a>
@@ -26,7 +33,16 @@ export default class Header extends React.Component {
             </ul>
           </div>
         </div>
+        {console.log(this.props)}
       </div>
     )
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    isLogin: state.isLogin
+  }
+}
+
+export default connect(mapStateToProps)(Header);

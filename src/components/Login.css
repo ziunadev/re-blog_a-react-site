@@ -1,1 +1,133 @@
- 
+ .login-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   height: 100vh;
+ }
+
+.login-wrapper {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  flex-direction: row;
+  width: 60%;
+  height: 700px;
+  border-radius: 1px;
+  /* margin-top: 150px; */
+  /* background-color: #2E3440; */
+  box-shadow: 0 0 7px 2px #434C5E;
+}
+
+.right-content form {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  justify-content: center;
+  /* width: 100%; */
+}
+
+.left-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 65%;
+  height: inherit;
+  background-color: #2E3440;
+}
+
+.left-content span {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40pt;
+  font-weight: 700;
+  font-style: italic;
+  color: #ECEFF4;
+  transition: 0.3s;
+}
+
+.left-content span:hover {
+  /* position: relative;
+  margin-bottom: 5px; */
+  color: #BF616A;
+}
+
+.left-content p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15pt;
+  font-weight: 300;
+  color: #ECEFF4;
+
+}
+
+.right-content {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  padding: 100px 0;
+  flex-grow: 2;
+  height: 100%;
+  background-color: #D8DEE9;
+  color: #2E3440;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.greeter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  margin-bottom: 50px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.greeter h2 {
+  font-weight: 600;
+}
+
+.greeter h3 {
+  font-weight: 400;
+}
+
+.right-content form div {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-bottom: 20px;
+  font-size: 12pt;
+}
+
+.right-content input {
+  border: none;
+  margin-top: 7px;
+  width: 300px;
+  height: 40px;
+  padding: 0 15px;
+  color: #2E3440;
+  background-color: #ECEFF4;
+}
+
+.right-content button {
+  margin-top: 20px;
+  width: 300px;
+  height: 40px;
+  border: none;
+  background-color: #2E3440;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12pt;
+  color: #ECEFF4;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.right-content button:hover {
+  /* color: #BF616A; */
+  background-color: #3B4252;
+  /* background-color: #BF616A; */
+}
+
+.right-content button:active {
+  /* color: #ECEFF4; */
+  background-color: #2E3440;
+}

@@ -6,12 +6,15 @@ export default class Fetch extends React.Component {
 
     this.state = {
       title: '',
-      content: ''
+      content: '',
+      token: '',
+      listResult: []
     }
     this.loginData = this.loginData.bind(this);
     this.addData = this.addData.bind(this);
     this.getData = this.getData.bind(this);
     this.getUserPost = this.getUserPost.bind(this);
+    this.isAuthor = this.isAuthor.bind(this);
   }
 
   getUserPost() {
@@ -42,13 +45,16 @@ export default class Fetch extends React.Component {
       'http://localhost:3030/api/v1/public/post'
     )
     .then(async (res) => {
+      var listResult;
       if (res.status == 200) {
         const body = await res.json();
-
-        console.log(body.data);
-      } else {
+        listResult = body.data;
+        } else {
         console.log('err');
       }
+      this.setState({
+        listResult: listResult
+      })
     })
     .catch((err) => {
       console.trace();
@@ -81,6 +87,10 @@ export default class Fetch extends React.Component {
     .catch((err) => {
       console.trace();
     })
+    this.setState({
+      title: '',
+      content: ''
+    })
   }
 
   loginData() {
@@ -108,6 +118,10 @@ export default class Fetch extends React.Component {
     .catch((err) => {
       console.trace();
     })
+  }
+
+  componentDidMount() {
+    this.getData();
   }
 
   render() {
@@ -148,8 +162,32 @@ export default class Fetch extends React.Component {
               get user post
             </button>
           </form>
+          <ol>
+            {this.state.listResult.map(
+              (el) => <li>
+                        <div>
+                          <h1>{el.title}</h1>
+                          <h3>{this.isAuthor(el)}</h3>
+                          <p>{el.content}</p>
+                        </div>
+                      </li>
+            )}
+          </ol>
         </div>
       </div>
     )
+  }
+
+  isAuthor(el) {
+    var author;
+    switch (el.author_id) {
+      case 1:
+        author = "User 1";
+        break;
+      case 2:
+        author = "User 2";
+        break;
+    }
+    return author;
   }
 }

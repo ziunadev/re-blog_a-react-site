@@ -1,13 +1,17 @@
 import { createStore } from 'redux';
 import {
-  ADD_TODO
+  ADD_TODO,
+  USER_AUTHENTICATED
+  // ADD_USERNAME,
+  // TOKEN_AUTHENTICATED
 } from './constants/CONSTANTS';
 
 
 const preloadState = {
   todo: ["Sudah ada Todo"],
-  username: [],
-  password: []
+  isLogin: false,
+  token: null
+  // username: ''
 }
 
 function reducer(state, action) {
@@ -17,11 +21,17 @@ function reducer(state, action) {
         ...state,
         todo: [...state.todo, action.todo]
       }
-    case ADD_USERNAME:
+    case USER_AUTHENTICATED:
       return {
         ...state,
-        username: 
+        isLogin: true,
+        token: action.token
       }
+    // case ADD_USERNAME:
+    //   return {
+    //     ...state,
+    //     username: action.username
+    //   }
   }
   return state;
 }

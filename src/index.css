@@ -35,9 +35,9 @@ body {
 
 .ContentContainer {
   display: flex;
-  flex-flow: row;
-  /* align-items: center; */
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
   /* width: 100vw; */
   /* height: inherit; */
   flex-grow: 3;
